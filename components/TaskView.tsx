@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Text, View } from "react-native";
+import { Svg } from "react-native-svg";
 import { styles } from '../constants/styles';
+import FullStar from '../assets/full_star.svg';
+import EmptyStar from '../assets/empty_star.svg';
 
 type TaskViewProps = {
     name?: string;
@@ -34,7 +37,9 @@ export default function TaskView(props: TaskViewProps) {
                 <Text style={styles.task_text}>{props.name}</Text>
             </View>
             <View style={styles.task_difficulty}>
-                {/* Image */}
+				<FullStar style={styles.difficulty_star} width="20%" height="50%" />
+				<EmptyStar style={styles.difficulty_star} width="20%" height="50%" />
+                <EmptyStar style={styles.difficulty_star} width="20%" height="50%" />
             </View>
         </View>
     );
